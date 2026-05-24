@@ -1,0 +1,213 @@
+/* ── Reset & Base ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+}
+
+.app { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* ── Navbar ────────────────────────────────────────────────────── */
+.navbar {
+  background: #1976d2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 60px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  position: sticky; top: 0; z-index: 100;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+
+.brand-icon { font-size: 1.4rem; }
+
+.nav-links {
+  list-style: none;
+  display: flex; gap: 0.25rem;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+}
+
+/* ── Main content ──────────────────────────────────────────────── */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── Footer ────────────────────────────────────────────────────── */
+.footer {
+  background: #1976d2;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.8rem;
+}
+
+/* ── Cards ─────────────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* ── Page titles ───────────────────────────────────────────────── */
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1976d2;
+}
+
+/* ── Stat grid ─────────────────────────────────────────────────── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  border-top: 4px solid #1976d2;
+}
+
+.stat-card.open    { border-color: #2196f3; }
+.stat-card.prog    { border-color: #ff9800; }
+.stat-card.res     { border-color: #4caf50; }
+.stat-card.closed  { border-color: #9e9e9e; }
+.stat-card.crit    { border-color: #f44336; }
+
+.stat-value { font-size: 2.2rem; font-weight: 800; }
+.stat-label { font-size: 0.8rem; color: #666; margin-top: 0.2rem; }
+
+/* ── Badges / Pills ────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-Open       { background: #e3f2fd; color: #1565c0; }
+.badge-InProgress { background: #fff3e0; color: #e65100; }
+.badge-Resolved   { background: #e8f5e9; color: #2e7d32; }
+.badge-Closed     { background: #f5f5f5; color: #616161; }
+
+.badge-Low      { background: #e8f5e9; color: #388e3c; }
+.badge-Medium   { background: #fff8e1; color: #f57f17; }
+.badge-High     { background: #fff3e0; color: #e65100; }
+.badge-Critical { background: #ffebee; color: #c62828; }
+
+/* ── Table ──────────────────────────────────────────────────────── */
+.table-wrapper { overflow-x: auto; }
+
+table {
+  width: 100%; border-collapse: collapse; font-size: 0.88rem;
+}
+
+th {
+  background: #1976d2; color: #fff;
+  padding: 0.7rem 1rem; text-align: left; font-weight: 600;
+}
+
+td { padding: 0.65rem 1rem; border-bottom: 1px solid #eee; }
+
+tr:hover td { background: #f5f8ff; }
+
+/* ── Buttons ────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.5rem 1.1rem;
+  border: none; border-radius: 6px;
+  font-size: 0.88rem; font-weight: 600; cursor: pointer;
+  transition: filter 0.15s;
+}
+.btn:hover { filter: brightness(0.92); }
+
+.btn-primary   { background: #1976d2; color: #fff; }
+.btn-success   { background: #4caf50; color: #fff; }
+.btn-danger    { background: #f44336; color: #fff; }
+.btn-warning   { background: #ff9800; color: #fff; }
+.btn-secondary { background: #9e9e9e; color: #fff; }
+.btn-sm        { padding: 0.3rem 0.7rem; font-size: 0.78rem; }
+
+/* ── Forms ──────────────────────────────────────────────────────── */
+.form-group { margin-bottom: 1.1rem; }
+
+label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.3rem; }
+
+input, select, textarea {
+  width: 100%; padding: 0.6rem 0.85rem;
+  border: 1.5px solid #ccc; border-radius: 6px;
+  font-size: 0.9rem; background: #fafafa;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none; border-color: #1976d2; background: #fff;
+}
+
+textarea { resize: vertical; min-height: 90px; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+/* ── Alert / Status bars ────────────────────────────────────────── */
+.alert {
+  padding: 0.8rem 1.2rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.9rem;
+}
+.alert-success { background: #e8f5e9; color: #2e7d32; border-left: 4px solid #4caf50; }
+.alert-error   { background: #ffebee; color: #c62828; border-left: 4px solid #f44336; }
+.alert-info    { background: #e3f2fd; color: #1565c0; border-left: 4px solid #2196f3; }
+
+/* ── Filters row ────────────────────────────────────────────────── */
+.filters {
+  display: flex; flex-wrap: wrap; gap: 0.75rem;
+  margin-bottom: 1.25rem; align-items: flex-end;
+}
+
+.filters input, .filters select { width: auto; flex: 1; min-width: 130px; }
+
+/* ── Loading spinner ────────────────────────────────────────────── */
+.loader {
+  display: flex; justify-content: center; align-items: center;
+  padding: 3rem; font-size: 1rem; color: #1976d2;
+}
+
+/* ── Log box (ETL) ──────────────────────────────────────────────── */
+.log-box {
+  background: #111; color: #a5d6a7; font-family: monospace;
+  padding: 1rem; border-radius: 6px; font-size: 0.82rem;
+  max-height: 300px; overflow-y: auto; white-space: pre-wrap;
+}
